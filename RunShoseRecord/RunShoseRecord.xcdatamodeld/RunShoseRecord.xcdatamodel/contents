@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
+    <entity name="RunShoseRecord" representedClassName=".RunShoseRecord" syncable="YES">
+        <attribute name="favShose" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="shoseBrand" attributeType="String" syncable="YES"/>
+        <attribute name="shoseBuyTime" attributeType="String" syncable="YES"/>
+        <attribute name="shoseBuyURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shoseComment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shoseFav" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="shoseImage" attributeType="Binary" syncable="YES"/>
+        <attribute name="shoseLocation" attributeType="String" syncable="YES"/>
+        <attribute name="shoseName" attributeType="String" syncable="YES"/>
+        <attribute name="shosePrice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shoseProfile" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shoseType" attributeType="String" syncable="YES"/>
+        <attribute name="shoseUseTime" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="RunShoseRecord" positionX="-63" positionY="-18" width="128" height="240"/>
+    </elements>
+</model>

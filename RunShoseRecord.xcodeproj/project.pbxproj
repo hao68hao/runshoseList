@@ -7,14 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA2000F61D6BFE05003DC15B /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2000F51D6BFE05003DC15B /* FavViewController.swift */; };
+		DA2000F81D6C1942003DC15B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2000F71D6C1942003DC15B /* MapKit.framework */; };
+		DA2000FA1D6C1A59003DC15B /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2000F91D6C1A59003DC15B /* mapViewController.swift */; };
+		DA2000FC1D6C36F0003DC15B /* addNewShoseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2000FB1D6C36F0003DC15B /* addNewShoseTableViewController.swift */; };
+		DA965D821D7E89A50036536F /* RunShoseRecord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA965D801D7E89A50036536F /* RunShoseRecord.xcdatamodeld */; };
+		DA965D851D7E93CD0036536F /* RunShoseRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA965D831D7E93CD0036536F /* RunShoseRecord+CoreDataProperties.swift */; };
+		DA965D861D7E93CD0036536F /* RunShoseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA965D841D7E93CD0036536F /* RunShoseRecord.swift */; };
 		DAAF0E011D6AA920005FA26D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF0E001D6AA920005FA26D /* AppDelegate.swift */; };
 		DAAF0E031D6AA920005FA26D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF0E021D6AA920005FA26D /* ViewController.swift */; };
 		DAAF0E061D6AA920005FA26D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAF0E041D6AA920005FA26D /* Main.storyboard */; };
 		DAAF0E081D6AA920005FA26D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAAF0E071D6AA920005FA26D /* Assets.xcassets */; };
 		DAAF0E0B1D6AA920005FA26D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAAF0E091D6AA920005FA26D /* LaunchScreen.storyboard */; };
+		DAAF0E131D6AA97F005FA26D /* ShoseListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF0E121D6AA97F005FA26D /* ShoseListTableViewController.swift */; };
+		DAAF0E151D6AB009005FA26D /* shoseListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF0E141D6AB009005FA26D /* shoseListTableViewCell.swift */; };
+		DAAF0E191D6AF2AD005FA26D /* shoseStruck1.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF0E181D6AF2AD005FA26D /* shoseStruck1.swift */; };
+		DAAF0E1B1D6AFFF8005FA26D /* detailShoseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF0E1A1D6AFFF8005FA26D /* detailShoseTableViewController.swift */; };
+		DAAF0E1D1D6B0423005FA26D /* detailShoseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAF0E1C1D6B0423005FA26D /* detailShoseTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DA2000F51D6BFE05003DC15B /* FavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavViewController.swift; sourceTree = "<group>"; };
+		DA2000F71D6C1942003DC15B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		DA2000F91D6C1A59003DC15B /* mapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
+		DA2000FB1D6C36F0003DC15B /* addNewShoseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addNewShoseTableViewController.swift; sourceTree = "<group>"; };
+		DA965D811D7E89A50036536F /* RunShoseRecord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunShoseRecord.xcdatamodel; sourceTree = "<group>"; };
+		DA965D831D7E93CD0036536F /* RunShoseRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RunShoseRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DA965D841D7E93CD0036536F /* RunShoseRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunShoseRecord.swift; sourceTree = "<group>"; };
 		DAAF0DFD1D6AA920005FA26D /* RunShoseRecord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunShoseRecord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAAF0E001D6AA920005FA26D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAAF0E021D6AA920005FA26D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +41,11 @@
 		DAAF0E071D6AA920005FA26D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAAF0E0A1D6AA920005FA26D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAAF0E0C1D6AA920005FA26D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAAF0E121D6AA97F005FA26D /* ShoseListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoseListTableViewController.swift; sourceTree = "<group>"; };
+		DAAF0E141D6AB009005FA26D /* shoseListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shoseListTableViewCell.swift; sourceTree = "<group>"; };
+		DAAF0E181D6AF2AD005FA26D /* shoseStruck1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shoseStruck1.swift; sourceTree = "<group>"; };
+		DAAF0E1A1D6AFFF8005FA26D /* detailShoseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailShoseTableViewController.swift; sourceTree = "<group>"; };
+		DAAF0E1C1D6B0423005FA26D /* detailShoseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailShoseTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2000F81D6C1942003DC15B /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +63,9 @@
 		DAAF0DF41D6AA920005FA26D = {
 			isa = PBXGroup;
 			children = (
+				DA965D831D7E93CD0036536F /* RunShoseRecord+CoreDataProperties.swift */,
+				DA965D841D7E93CD0036536F /* RunShoseRecord.swift */,
+				DA2000F71D6C1942003DC15B /* MapKit.framework */,
 				DAAF0DFF1D6AA920005FA26D /* RunShoseRecord */,
 				DAAF0DFE1D6AA920005FA26D /* Products */,
 			);
@@ -54,9 +82,18 @@
 		DAAF0DFF1D6AA920005FA26D /* RunShoseRecord */ = {
 			isa = PBXGroup;
 			children = (
+				DAAF0E181D6AF2AD005FA26D /* shoseStruck1.swift */,
 				DAAF0E001D6AA920005FA26D /* AppDelegate.swift */,
 				DAAF0E021D6AA920005FA26D /* ViewController.swift */,
 				DAAF0E041D6AA920005FA26D /* Main.storyboard */,
+				DA2000FB1D6C36F0003DC15B /* addNewShoseTableViewController.swift */,
+				DA965D801D7E89A50036536F /* RunShoseRecord.xcdatamodeld */,
+				DAAF0E121D6AA97F005FA26D /* ShoseListTableViewController.swift */,
+				DAAF0E141D6AB009005FA26D /* shoseListTableViewCell.swift */,
+				DAAF0E1A1D6AFFF8005FA26D /* detailShoseTableViewController.swift */,
+				DAAF0E1C1D6B0423005FA26D /* detailShoseTableViewCell.swift */,
+				DA2000F91D6C1A59003DC15B /* mapViewController.swift */,
+				DA2000F51D6BFE05003DC15B /* FavViewController.swift */,
 				DAAF0E071D6AA920005FA26D /* Assets.xcassets */,
 				DAAF0E091D6AA920005FA26D /* LaunchScreen.storyboard */,
 				DAAF0E0C1D6AA920005FA26D /* Info.plist */,
@@ -96,6 +133,12 @@
 				TargetAttributes = {
 					DAAF0DFC1D6AA920005FA26D = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = Z78S7228TC;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,7 +178,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAAF0E191D6AF2AD005FA26D /* shoseStruck1.swift in Sources */,
+				DAAF0E151D6AB009005FA26D /* shoseListTableViewCell.swift in Sources */,
+				DAAF0E131D6AA97F005FA26D /* ShoseListTableViewController.swift in Sources */,
+				DA965D851D7E93CD0036536F /* RunShoseRecord+CoreDataProperties.swift in Sources */,
+				DA965D861D7E93CD0036536F /* RunShoseRecord.swift in Sources */,
+				DAAF0E1D1D6B0423005FA26D /* detailShoseTableViewCell.swift in Sources */,
+				DA965D821D7E89A50036536F /* RunShoseRecord.xcdatamodeld in Sources */,
 				DAAF0E031D6AA920005FA26D /* ViewController.swift in Sources */,
+				DA2000FC1D6C36F0003DC15B /* addNewShoseTableViewController.swift in Sources */,
+				DAAF0E1B1D6AFFF8005FA26D /* detailShoseTableViewController.swift in Sources */,
+				DA2000FA1D6C1A59003DC15B /* mapViewController.swift in Sources */,
+				DA2000F61D6BFE05003DC15B /* FavViewController.swift in Sources */,
 				DAAF0E011D6AA920005FA26D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,10 +305,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RunShoseRecord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.laudaxgg.RunShoseRecord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -262,10 +319,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RunShoseRecord/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.laudaxgg.RunShoseRecord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -288,8 +348,22 @@
 				DAAF0E111D6AA920005FA26D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DA965D801D7E89A50036536F /* RunShoseRecord.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA965D811D7E89A50036536F /* RunShoseRecord.xcdatamodel */,
+			);
+			currentVersion = DA965D811D7E89A50036536F /* RunShoseRecord.xcdatamodel */;
+			path = RunShoseRecord.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DAAF0DF51D6AA920005FA26D /* Project object */;
 }
