@@ -11,6 +11,7 @@
 		DA2000F81D6C1942003DC15B /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA2000F71D6C1942003DC15B /* MapKit.framework */; };
 		DA2000FA1D6C1A59003DC15B /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2000F91D6C1A59003DC15B /* mapViewController.swift */; };
 		DA2000FC1D6C36F0003DC15B /* addNewShoseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2000FB1D6C36F0003DC15B /* addNewShoseTableViewController.swift */; };
+		DA2034B01D8E40740077F06A /* DeepTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2034AF1D8E40740077F06A /* DeepTableViewController.swift */; };
 		DA965D821D7E89A50036536F /* RunShoseRecord.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA965D801D7E89A50036536F /* RunShoseRecord.xcdatamodeld */; };
 		DA965D851D7E93CD0036536F /* RunShoseRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA965D831D7E93CD0036536F /* RunShoseRecord+CoreDataProperties.swift */; };
 		DA965D861D7E93CD0036536F /* RunShoseRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA965D841D7E93CD0036536F /* RunShoseRecord.swift */; };
@@ -31,6 +32,7 @@
 		DA2000F71D6C1942003DC15B /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		DA2000F91D6C1A59003DC15B /* mapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
 		DA2000FB1D6C36F0003DC15B /* addNewShoseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addNewShoseTableViewController.swift; sourceTree = "<group>"; };
+		DA2034AF1D8E40740077F06A /* DeepTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeepTableViewController.swift; sourceTree = "<group>"; };
 		DA965D811D7E89A50036536F /* RunShoseRecord.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RunShoseRecord.xcdatamodel; sourceTree = "<group>"; };
 		DA965D831D7E93CD0036536F /* RunShoseRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RunShoseRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA965D841D7E93CD0036536F /* RunShoseRecord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunShoseRecord.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				DA2000FB1D6C36F0003DC15B /* addNewShoseTableViewController.swift */,
 				DA965D801D7E89A50036536F /* RunShoseRecord.xcdatamodeld */,
 				DAAF0E121D6AA97F005FA26D /* ShoseListTableViewController.swift */,
+				DA2034AF1D8E40740077F06A /* DeepTableViewController.swift */,
 				DAAF0E141D6AB009005FA26D /* shoseListTableViewCell.swift */,
 				DAAF0E1A1D6AFFF8005FA26D /* detailShoseTableViewController.swift */,
 				DAAF0E1C1D6B0423005FA26D /* detailShoseTableViewCell.swift */,
@@ -191,6 +194,7 @@
 				DA2000FA1D6C1A59003DC15B /* mapViewController.swift in Sources */,
 				DA2000F61D6BFE05003DC15B /* FavViewController.swift in Sources */,
 				DAAF0E011D6AA920005FA26D /* AppDelegate.swift in Sources */,
+				DA2034B01D8E40740077F06A /* DeepTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

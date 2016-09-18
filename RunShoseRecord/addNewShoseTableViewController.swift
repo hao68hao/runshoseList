@@ -212,7 +212,7 @@ class addNewShoseTableViewController: UITableViewController, UIImagePickerContro
         } else if indexPath.row == 4 {
             //显示UIDatePicker
             datePicker.hidden = false
-            self.view.bringSubviewToFront(datePicker)
+//            self.view.bringSubviewToFront(datePicker)
             
         }
         

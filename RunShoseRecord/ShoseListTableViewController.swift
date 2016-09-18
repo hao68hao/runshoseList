@@ -9,12 +9,41 @@
 import UIKit
 import CoreData
 
-class ShoseListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class ShoseListTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
     
     var shoseArray:[RunShoseRecord] = []
     
     var frc : NSFetchedResultsController!
-
+    
+    //定义搜索结果数据
+    var srArray:[RunShoseRecord] = []
+    
+    //定义一个searchbarcontroller变量
+    var sc: UISearchController!
+    
+    
+    //筛选结果方法,返回包含搜索结果字符串的所有数据
+    //swift中数组自带了filter方法，参数是一个闭包，筛选符合条件的元素，组成一个新数组返回
+    //containsString检测一个字体串是否包含另一个字符串
+    func searchFilter(textSearch:String) {
+        srArray = shoseArray.filter({ (r) -> Bool in
+            return r.shosePrice!.containsString(textSearch)
+        })
+    }
+    
+    //实现UISearchResultsUpdating协议中的updateSearchResultsForSearchController方法，将搜索结果展示在搜索控制器中。
+    //将搜索条中输入的文字，赋给searchFilter方法
+    func updateSearchResultsForSearchController(searchController: UISearchController){
+        if var textToSearch = sc.searchBar.text{
+            //去掉搜索字符中的空格
+            textToSearch = textToSearch.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+            searchFilter(textToSearch)
+            tableView.reloadData()
+        }
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,6 +72,20 @@ class ShoseListTableViewController: UITableViewController, NSFetchedResultsContr
         } catch {
             print(error)
         }
+        
+        //实例化搜索控制器，指定搜索结果展示的视图为空，表示搜索结果将在当前的视图展示；
+        sc = UISearchController(searchResultsController: nil)
+        //将搜索控制器添加到表格的表头部分
+        tableView.tableHeaderView = sc.searchBar
+        sc.searchResultsUpdater = self //搜索结果为当前控制器
+        sc.dimsBackgroundDuringPresentation = false  //搜索时背景不变暗
+        
+        sc.searchBar.placeholder = "请输入鞋子名称"
+        
+        sc.searchBar.tintColor = UIColor.whiteColor()
+//        sc.searchBar.barTintColor = UIColor.orangeColor()
+        sc.searchBar.searchBarStyle = .Minimal
+        
 
     }
     
@@ -93,25 +136,36 @@ class ShoseListTableViewController: UITableViewController, NSFetchedResultsContr
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return shoseArray.count
+        
+        //判断，如果搜索条active状态为 true，则返回搜索结果的数量；
+        //如果搜索条active状态为false，则返回正常的表格数量；
+        if sc.active == true {
+            return srArray.count
+        } else {
+            return shoseArray.count
+        }
     }
 
    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("shoseListCell", forIndexPath: indexPath) as! shoseListTableViewCell
         
-        cell.shoseName.text = shoseArray[indexPath.row].shoseName
-        cell.shoseImage.image = UIImage(data: shoseArray[indexPath.row].shoseImage)
+        //判断，定义一个变理r，
+        //如果sc.active为true,则使用srArray[indexPath.row]内容，
+        //如果sc.active不为true，则使用shoseArray[indexPath.row]内容；
+        let r = sc.active ? srArray[indexPath.row] : shoseArray[indexPath.row]
+        
+        cell.shoseName.text = r.shoseName
+        cell.shoseImage.image = UIImage(data: r.shoseImage)
         
         //设置图片为圆形
         cell.shoseImage.layer.cornerRadius = 30
         cell.shoseImage.clipsToBounds = true
         
-        cell.shoseBrand.text = shoseArray[indexPath.row].shoseBrand
-        cell.shosePrice.text = shoseArray[indexPath.row].shosePrice
+        cell.shoseBrand.text = r.shoseBrand
+        cell.shosePrice.text = r.shosePrice
         
-        if (shoseArray[indexPath.row].shoseFav != nil) {
+        if (r.shoseFav != nil) {
             cell.accessoryType = .DetailButton
         } else {
             cell.accessoryType = .None
@@ -199,11 +253,19 @@ class ShoseListTableViewController: UITableViewController, NSFetchedResultsContr
         
         if segue.identifier == "showShoseDetail" {
             let destVC = segue.destinationViewController as! detailShoseTableViewController
-            destVC.detailShose = shoseArray[tableView.indexPathForSelectedRow!.row]
+            
+            //用户点击搜索结果单元格时，转场到搜索结果的详情页。
+            destVC.detailShose = sc.active ? srArray[(tableView.indexPathForSelectedRow!.row)] : shoseArray[(tableView.indexPathForSelectedRow!.row)]
+            
+            destVC.hidesBottomBarWhenPushed = true
         }
     }
    
-    
+    //搜索单元格时不可编辑
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        
+        return !sc.active
+    }
     
     
     /*
@@ -273,18 +335,7 @@ class ShoseListTableViewController: UITableViewController, NSFetchedResultsContr
     }
     */
     
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
    
-  
- 
 
     /*
     // Override to support rearranging the table view.
@@ -308,11 +359,4 @@ class ShoseListTableViewController: UITableViewController, NSFetchedResultsContr
     
 
 }
-
-//var shoseArray = [
-//    RunShoseRecord(shoseName: "Hokaoneone challenger ATR", shoseBrand: "HokaOneOne", shosePrice: "600.00元", shoseImage: "5.pic", shoseFav: false, shoseBuyTime: "2016-03-15", shoseType: "报废", shoseProfile: "Zip through rugged terrain in the HOKA ONE ONE Speedgoat", shoseBuyURL: "http://www.taobao.com", shoseUseTime: "5个月", shoseComment: "超轻的快感觉", shoseLocation: "北京市海淀区中关村大街8号中钢国际广场11层"),
-//    RunShoseRecord(shoseName: "Hokaoneone SpeedGoat", shoseBrand: "HokaOneOne", shosePrice: "916.00元", shoseImage: "1.pic", shoseFav: false, shoseBuyTime: "2016-04-15", shoseType: "使用", shoseProfile: "Zip through rugged terrain in the HOKA ONE ONE Speedgoat, an update to the Rapa Nui 2 Trail.  Built with the Speedgoat 50k in mind, this maximal trail shoe can take on technical surfaces with ease thanks to a Vibram Megagrip outsole, featuring aggressive lugs and vertical flex grooves for enhanced stability.  A well cushioned midsole offers soft protection, while a lightweight upper provides necessary structure to keep you grounded through tough trail conditions.", shoseBuyURL: "http://www.taobao.com", shoseUseTime: "4个月", shoseComment: "越野真是利器没有之一", shoseLocation: "北京市昌平区回龙观龙腾苑2区13号楼"),
-//    RunShoseRecord(shoseName: "Hokaoneone Clifton", shoseBrand: "HokaOneOne", shosePrice: "772.00元", shoseImage: "3.pic", shoseFav: false, shoseBuyTime: "2016-05-17", shoseType: "使用", shoseProfile: "Zip through rugged terrain in the HOKA ONE ONE Speedgoat, an update to the Rapa Nui 2 Trail.  Built with the Speedgoat 50k in mind, this maximal trail shoe can take on technical surfaces with ease thanks to a Vibram Megagrip outsole, featuring aggressive lugs and vertical flex grooves for enhanced stability.  A well cushioned midsole offers soft protection, while a lightweight upper provides necessary structure to keep you grounded through tough trail conditions.", shoseBuyURL: "http://www.taobao.com", shoseUseTime: "2个月", shoseComment: "公路跑鞋中缓冲相当优秀的一款鞋子", shoseLocation: "河南省许昌市魏都区八一西路王月桥"),
-//    RunShoseRecord(shoseName: "Hokaoneone conquest", shoseBrand: "HokaOneOne", shosePrice: "600.00元", shoseImage: "4.pic", shoseFav: false, shoseBuyTime: "2016-08-15", shoseType: "使用", shoseProfile: "Zip through rugged terrain in the HOKA ONE ONE Speedgoat, an update to the Rapa Nui 2 Trail.  Built with the Speedgoat 50k in mind, this maximal trail shoe can take on technical surfaces with ease thanks to a Vibram Megagrip outsole, featuring aggressive lugs and vertical flex grooves for enhanced stability.  A well cushioned midsole offers soft protection, while a lightweight upper provides necessary structure to keep you grounded through tough trail conditions.", shoseBuyURL: "http://www.taobao.com", shoseUseTime: "1个月", shoseComment: "略重，支撑好，公路跑鞋中的极品！", shoseLocation: "河北省唐山市丰润区曹雪芹东道光华9小区")
-//]
 
